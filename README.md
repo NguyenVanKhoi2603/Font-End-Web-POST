@@ -1,5 +1,5 @@
 # Setup Program
-
+![Tux, the Linux mascot](/images/index.png)
 1. git clone server API
 - Install Nodejs
 - Install postgres
