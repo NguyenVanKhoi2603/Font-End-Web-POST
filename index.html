@@ -10,7 +10,6 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
         crossorigin="anonymous"></script>
-
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
         integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
         crossorigin="anonymous"></script>
@@ -20,15 +19,13 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
         integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
         crossorigin="anonymous"></script>
-
     <link rel="stylesheet" href="./views/styles/styles.css">
     <title>POST</title>
 </head>
 
-
 <body>
-
     <div class="container">
+        <!-- Navbar -->
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container-fluid">
                 <a class="navbar-brand" href="#">Instagram</a>
@@ -39,29 +36,6 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                        <!-- <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Link</a>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                                data-bs-toggle="dropdown" aria-expanded="false">
-                                Dropdown
-                            </a>
-                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" href="#">Action</a></li>
-                                <li><a class="dropdown-item" href="#">Another action</a></li>
-                                <li>
-                                    <hr class="dropdown-divider">
-                                </li>
-                                <li><a class="dropdown-item" href="#">Something else here</a></li>
-                            </ul>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-                        </li> -->
                     </ul>
                     <form class="d-flex justify-content-end">
                         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
@@ -70,10 +44,9 @@
                 </div>
             </div>
         </nav>
-
         <br>
-
         <div class="row">
+            <!-- From create content -->
             <div class="col-md-4">
                 <div class="info">
                     <button class="btn btn-danger" id="logout">Logout</button>
@@ -83,76 +56,22 @@
                     <form action="" method="post">
                         <label for="title" class="form-label">Title</label>
                         <input class="form-control" type="text" id="title" name="title">
-
-                        <!-- <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
                         <label for="title" class="form-label">Content</label>
                         <textarea rows="8" type="text" class="form-control" id="content" name="content"></textarea>
-
                         <label for="title" class="form-label">Link Image</label>
                         <input class="form-control" type="text" id="link-image" name="link-image">
                         <br>
                         <button id="btn-create-content" class="btn btn-success" type="submit">POST</button>
-                        <!-- <button onclick="myFunction()">Try it</button> -->
                     </form>
                 </div>
-
             </div>
+            <!-- Content -->
             <div class="col-md-8">
                 <div class="posts">
-                    <!-- <div class="item">
-                        <div class="row">
-                            <div class="col-md-8 d-flex flex-row align-items-center timestamp">
-                                <h3>Username</h3>
-                                <p>Timestamp</p>
-
-                            </div>
-                            <div class="col-md-4">
-                                <div class="dropdown">
-                                    <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton"
-                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-
-                                    </button>
-                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                        <a class="dropdown-item" href="#">Delete</a>
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
-                        <div class="title">
-                            <h4>Title</h4>
-                        </div>
-                        <div class="content">
-                            <p>
-                                content
-                            </p>
-                            <img class="img img-fluid" src="" alt="">
-
-                        </div>
-                        <div class="comment">
-                            <div class="list-comment">
-                                <h5>comment:</h5>
-                                <div class="item-comment">
-                                    <h5>Username</h5>
-                                    <p>comment</p>
-                                </div>
-
-
-
-                            </div>
-                            <div class="input-group">
-                                <input type="text" class="form-control" placeholder="Recipient's username"
-                                    aria-label="Recipient's username" aria-describedby="button-addon2">
-                                <button class="btn btn-outline-secondary" type="button"
-                                    id="button-addon2">Button</button>
-                            </div>
-                        </div>
-                    </div> -->
                 </div>
             </div>
         </div>
     </div>
-
 </body>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script src="./views/script/index.js"></script>

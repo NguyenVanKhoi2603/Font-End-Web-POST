@@ -3,6 +3,7 @@ $(function () {
     if (token == "") {
         window.location.href = "/login.html";
     }
+
     $.ajax({
         url: "http://localhost:3001/info",
         headers: { "Authorization": `Bearer ${localStorage.getItem('token')}` },
@@ -15,11 +16,9 @@ $(function () {
         url: "http://localhost:3001/",
         headers: { "Authorization": `Bearer ${localStorage.getItem('token')}` },
     }).done(function (data) {
-
         console.log("data: ", data);
         for (const post of data.posts.rows) {
             var idPost = post.id;
-
             $(".posts").append(`
             <div class="item">
                 <div class="row">
@@ -31,7 +30,6 @@ $(function () {
                     <div class="dropdown">
                         <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton"
                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-
                         </button>
                         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                             <a class="dropdown-item" href="#" onclick="deletePost(${post?.id});">Delete</a>
@@ -47,9 +45,7 @@ $(function () {
                     ${post.content}
                     </p>
                     ${post?.image == "Not Found!" ? '' : `<img class="img img-fluid" src="${post?.image}" alt="${post?.image}">`}
-                    
                 </div>
-
                 <div class="comment">
                             <div class="list-comment">
                             </div>
@@ -61,7 +57,6 @@ $(function () {
                                                     </div>
                                                     ` : ``
             }).join("")}   
-                        
                             <div class="input-group">
                                 <input type="text" class="form-control" placeholder="Enter comment...."
                                       name="content_comment" id="content_comment_${post.id}" >
@@ -69,11 +64,9 @@ $(function () {
                                      name="button-comment" onclick="publish_Comment(${post.id});">SEND</button>
                             </div>
                         </div>
-                
             </div>
             `)
         }
-
     }).fail(function (jqXHR, exception) {
         if (jqXHR.status === 403) {
             window.location.href = "/login.html";
@@ -94,7 +87,6 @@ $("#btn-create-content").click(function () {
             method: "POST",
             url: "http://localhost:3001/post",
             data: { title: title, content: content, image: image },
-            //headers: { "Authorization": localStorage.getItem('token') }
         }).done(function (msg) {
             if (msg.message) {
                 alert("Notification: " + msg.message);
@@ -127,10 +119,8 @@ function publish_Comment(id) {
             method: "POST",
             url: "http://localhost:3001/comment",
             data: { content_comment: content, post_id: post_id },
-            //headers: { "Authorization": localStorage.getItem('token') }
         }).done(function (msg) {
             if (msg.message) {
-                //alert("Notification: " + msg.message);
                 $('.item').load('');
             }
         });
